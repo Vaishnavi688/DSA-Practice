@@ -1,0 +1,21 @@
+package Patterns;
+
+public class Hollow_rectngle {
+    public static void hollow_rectangle(int row, int col){
+        for(int i=1; i<=row; i++){
+            for(int j=1; j<=col; j++){
+                if(i==1 || i==row || j==1 || j==col){
+                    System.out.print("*");
+                }
+                else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String Args[]){
+        hollow_rectangle(5,10);
+    }
+}
