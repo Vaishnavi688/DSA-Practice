@@ -39,7 +39,8 @@ public class Half_pyramid {
         }
     }
     public static void alternate_small_capital_character(int n){
-        for(int i=1; i<=n; i++){
+        for(int i=1; i<=
+            n; i++){
         char ch = (char)('a'+(i-1));  
         
         for(int j=1; j<=i; j++){
