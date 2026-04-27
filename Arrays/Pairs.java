@@ -14,8 +14,17 @@ public class Pairs {
         }
         System.out.println("Total Pairs :" +tp);
     }
+    public static void pairs(int numbers[]){
+        for( int i =0; i<numbers.length; i++){
+            for(int j=i+1; j<numbers.length; j++){
+                System.out.print("(" + numbers[i] + "," + numbers[j] + ")");
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args) {
         int numbers[] = {5, 10, 15, 20, 25, 30};
         printPairs(numbers);
+        pairs(numbers);
     }
 }
