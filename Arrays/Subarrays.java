@@ -41,9 +41,30 @@ public class Subarrays {
             System.out.println();
         }
     }
+    public static void sumsubarray(int numbers[]){
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        for(int i=0; i<numbers.length; i++){
+            int start = i;
+            for(int j=i; j<numbers.length; j++){
+                int end = j;
+                int sum = 0;
+                for(int k=start; k<=end; k++){
+                    System.out.print(numbers[k]+" ");
+                    sum = sum + numbers[k];
+                }
+                max = Math.max(max, sum);
+                min = Math.min(min, sum);
+                System.out.print("Sum is :" +sum);
+                System.out.println();
+            }
+            System.out.println();
+        }
+        System.out.println("Maximum sum:"+max);
+        System.out.println("Minimum sum:"+min);
+    }
     public static void main(String[] args) {
         int numbers[] = {5, 10, 15, 20, 25, 30};
-        subarrays(numbers);
-        sarray(numbers);
+        sumsubarray(numbers);
     }
 }
