@@ -10,12 +10,14 @@ public class linkedlist {
             this.next = null;
         }
     }
-    Node head;
-    Node tail;
+    public static Node head;
+    public static Node tail;
+    public static int size;
 
     public void addFirst(int data){
         //step1 = create new node
         Node newNode = new Node(data);
+        size++;
         if(head == null){
             head = tail = newNode;
             return;
@@ -30,6 +32,7 @@ public class linkedlist {
 
     public void addLast(int data) {
         Node newNode = new Node(data);
+        size++;
         if(head == null) {
             head = tail = newNode;
             return;
@@ -40,10 +43,11 @@ public class linkedlist {
 
     public void addMiddle(int index, int data) {
         Node newNode = new Node(data);
-        if(index == null){
+        if(index == 0){
             addFirst(data);
             return;
         }
+        size++;
         Node temp = head;
         int i = 0;
         while(i < index-1) {
@@ -79,6 +83,7 @@ public class linkedlist {
         ll.print();
         ll.addMiddle(3,4);
         ll.print();
+        System.out.println(ll.size);
     }
         
 }
