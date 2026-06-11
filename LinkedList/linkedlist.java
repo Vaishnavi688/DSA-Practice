@@ -1,4 +1,4 @@
-package LinkedList;
+
 
 public class linkedlist {
     public static class Node {
@@ -105,6 +105,20 @@ public class linkedlist {
         size--;
         return val;
     }
+    public boolean IterativeSearch(int key) {
+        Node temp = head;
+        int i=0;
+        while(temp!=null) {
+            if(temp.data == key) {
+                System.out.println("Key found at index: " +i);
+                return true;
+            }
+            temp = temp.next;
+            i++;
+        }
+        System.out.println("Key not found") ;
+        return false;
+    }
     public static void main(String[] args) {
         linkedlist ll = new linkedlist();
         ll.print();
@@ -119,6 +133,7 @@ public class linkedlist {
         ll.addMiddle(3,4);
         ll.print();
         System.out.println(ll.size);
+        ll.IterativeSearch(10);
         ll.removeFirst();
         ll.print();
         System.out.println(ll.size);
