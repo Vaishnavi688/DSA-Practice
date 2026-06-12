@@ -105,6 +105,16 @@ public class linkedlist {
         size--;
         return val;
     }
+    public void removeMiddle(int index) {
+        Node temp = head;
+        int i = 0;
+        while(i!=index-1) {
+            temp = temp.next;
+            i++;
+        }
+        temp.next = temp.next.next;
+        size--;
+    }
     public boolean IterativeSearch(int key) {
         Node temp = head;
         int i=0;
@@ -119,6 +129,18 @@ public class linkedlist {
         System.out.println("Key not found") ;
         return false;
     }
+    public void reverse() {
+        Node prev = null;
+        Node curr = head;
+        Node next;
+        while(curr!=null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
     public static void main(String[] args) {
         linkedlist ll = new linkedlist();
         ll.print();
@@ -132,12 +154,17 @@ public class linkedlist {
         ll.print();
         ll.addMiddle(3,4);
         ll.print();
+        ll.reverse();
+        ll.print();
         System.out.println(ll.size);
         ll.IterativeSearch(10);
         ll.removeFirst();
         ll.print();
         System.out.println(ll.size);
         ll.removeLast();
+        ll.print();
+        System.out.println(ll.size);
+        ll.removeMiddle(1);
         ll.print();
         System.out.println(ll.size);
     }
