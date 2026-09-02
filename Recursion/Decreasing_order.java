@@ -9,17 +9,17 @@ public class Decreasing_order {
         System.out.print(n+" ");
         printDec(n-1);
     }
-    public static void printInc(int start, int n){
-        if(start==n){
-            System.out.println(n);
+    public static void printInc(int n){
+        if(n==1){
+            System.out.print(n+" ");
             return;
         }
-        System.out.print(start+" ");
-        printInc(start+1,n);
+        printInc(n-1);
+        System.out.print(n+" ");
     }
     public static void main(String args[]){
         int n = 10;
         printDec(n);
-        printInc(1,n);
+        printInc(n);
     }
 }
